@@ -3,6 +3,16 @@
            i18n_domain="collective.googleforms">
     <!-- -*- extra stuff goes here -*- -->
 
+  <browser:page
+      for="*"
+      name="googleform_view"
+      class=".googleformview.GoogleFormView"
+      template="googleformview.pt"
+      allowed_interface=".googleformview.IGoogleFormView"
+      permission="zope.Public"
+      />
+
+
     <!-- If you are using plone version 3.0, you will need to include the 
          plone.browserlayer package in your buildout and uncomment the following
          line in order to use IGoogleFormsLayer as a layer attribute -->
