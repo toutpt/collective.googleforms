@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<layers>
+    <!-- -*- extra stuff goes here -*- -->
+
+    <layer name="collective.googleforms"
+        interface="collective.googleforms.interfaces.collective.googleformslayer.IGoogleFormsLayer"
+    />
+</layers>
+

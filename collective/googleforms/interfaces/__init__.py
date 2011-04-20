@@ -1,0 +1,2 @@
+from collective.googleformslayer import IGoogleFormsLayer
+
