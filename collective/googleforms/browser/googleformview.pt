@@ -4,10 +4,8 @@
       i18n:domain="collective.googleforms">
 <body>
     <div metal:fill-slot="main">
-        <tal:main-macro metal:define-macro="main"
-                        tal:define="testview view/test">
-
-            <span tal:content="testview/dummy">test</span>
+        <tal:main-macro metal:define-macro="main">
+    <div tal:condition="view/validate" tal:replace="structure view/form_html"></div>
 
         </tal:main-macro>
     </div>

@@ -3,7 +3,7 @@
     <!-- -*- extra stuff goes here -*- -->
 
     <layer name="collective.googleforms"
-        interface="collective.googleforms.interfaces.collective.googleformslayer.IGoogleFormsLayer"
+        interface="collective.googleforms.interfaces.IGoogleFormsLayer"
     />
 </layers>
 
