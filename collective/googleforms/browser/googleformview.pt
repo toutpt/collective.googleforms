@@ -5,7 +5,9 @@
 <body>
     <div metal:fill-slot="main">
         <tal:main-macro metal:define-macro="main">
-    <div tal:condition="view/validate" tal:replace="structure view/form_html"></div>
+    <form tal:condition="cond" tal:define="cond view/validate;form view/form_structure" tal:attributes="action form/action" tal:content="structure view/form_html">
+        
+    </form>
 
         </tal:main-macro>
     </div>

@@ -74,9 +74,10 @@ class GoogleFormView(BrowserView):
     def form_structure(self):
         if self._form_structure: return self._form_structure
         html = self.fetch()
-        form = {'title':u'title',
+        form = {'action':'',
                 'fields':[]}
         soup = BeautifulSoup(html)
+        form['action'] = str(soup.find('form')[u'action'])
         entries = soup.findAll("div",{"class":"ss-form-entry"})
 
         for entry in entries:
@@ -111,12 +112,6 @@ class GoogleFormView(BrowserView):
             else:
                 field['type']='inputs'
                 raw = str(entry.find('ul'))
-#                for li in entry.findAll('li'):
-#                    checkbox = li.label.text
-#                    import pdb;pdb.set_trace()
-#                    raw += str(li.input)
-#                    if checkbox: 
-#                        raw += checkbox
                 field['raw']=raw
             if field['type']:
                 form['fields'].append(field)
@@ -131,13 +126,9 @@ class GoogleFormView(BrowserView):
 
         structure = self.form_structure()
         fields = structure['fields']
-        html = ''
+        html = '<input type="hidden" value="%s" name="formkey"/>'%self.form_key()
 
         for field in fields:
             html+=HTMLFIELD%field
 
         return html
-
-    def form_action(self):
-        #TODO
-        pass
