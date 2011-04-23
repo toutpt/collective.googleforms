@@ -10,24 +10,7 @@
       template="googleformview.pt"
       allowed_interface=".googleformview.IGoogleFormView"
       permission="zope.Public"
+      layer="collective.googleforms.interfaces.IGoogleFormsLayer"
       />
-
-
-    <!-- If you are using plone version 3.0, you will need to include the 
-         plone.browserlayer package in your buildout and uncomment the following
-         line in order to use IGoogleFormsLayer as a layer attribute -->
-    <!-- 
-    <include package="plone.browserlayer" />
-    -->
-    <!-- Example of browser component with IGoogleFormsLayer layer attribute -->
-    <!-- 
-    <browser:page
-        name="my-view"
-        for="*"
-        permission="zope.Public"
-        template="my-view.pt"
-        layer="..interfaces.IGoogleFormsLayer"
-        />
-    -->
 
 </configure>
